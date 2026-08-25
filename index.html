@@ -6,7 +6,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="only light" name="color-scheme"/>
-<title>GTA VI Countdown 9.3.4 - Lighting Lock</title>
+<title>GTA VI Countdown</title>
+<meta content="Fan-made GTA VI countdown with a Vice City night scene. Not affiliated with Rockstar Games." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="GTA VI Countdown" property="og:title"/>
+<meta content="Fan-made GTA VI countdown with a Vice City night scene. Not affiliated with Rockstar Games." property="og:description"/>
+<meta content="https://jc-501-netizen.github.io/GTA-VI-Countdown-Timer/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="GTA VI Countdown" name="twitter:title"/>
+<meta content="Fan-made GTA VI countdown with a Vice City night scene. Not affiliated with Rockstar Games." name="twitter:description"/>
 <style>
 /* 9.3.4: block Windows/Chrome/Edge forced dark from stacking on the night scene */
 html{color-scheme:only light;background:#0c0017}
@@ -3001,6 +3009,8 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <a href="https://www.youtube.com/@RockstarGames" rel="noopener noreferrer" target="_blank">Rockstar Games YouTube</a>
 </div>
 <div>GTA VI Countdown | By J.C Cobra</div>
+<p class="footer-note">Fan project. Not affiliated with Rockstar Games.</p>
+<p class="footer-note">If lights look too dark, turn off page-darkening extensions such as Dark Reader for this site.</p>
 </footer>
 </main>
 <script>
@@ -6560,10 +6570,63 @@ body.hide-reflections .boat-35c16b .water-contact{
 </style>
 <script id="countdown-931-status">
 (()=>{
-  document.body.dataset.countdownBuild='9.3.4';
-  console.info('[9.3.4] lock night-scene lighting against OS/browser forced dark');
+  document.body.dataset.countdownBuild='9.3.5';
+  console.info('[9.3.5] public polish: title, disclaimer, previews, phone layout');
 })();
 </script>
 
+<style id="countdown-935-public-polish">
+.footer-note{
+  margin:8px auto 0;
+  max-width:36rem;
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:700;
+  line-height:1.45;
+}
+.official-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:6px 10px;
+}
+.timer,.time,.muted,.card-date,#netflixLocal,#youtubeLocal,#preloadLocal,#releaseLocal{
+  overflow-wrap:anywhere;
+}
+@media(max-width:850px){
+  html{-webkit-text-size-adjust:100%}
+  body{padding:10px}
+  .app{width:min(1080px,100%)}
+  .section,.cell{padding:16px 12px}
+  .command{min-height:0}
+  .brand{font-size:clamp(2.15rem,15vw,4.2rem)}
+  .days{font-size:clamp(2.1rem,12vw,3rem)}
+  .official-links{flex-direction:column;gap:8px}
+  .official-links span{display:none}
+  .footer{margin:16px 4px 8px}
+  .popup{left:12px;right:12px;top:12px;transform:translateY(-140%)}
+  .popup.show{transform:none}
+  .watch,.btn,.journey,.collapse{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  body.hud-off .hud-restore{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .settings .btn,.journey{width:100%}
+  .row input{min-height:36px}
+}
+@media(max-width:480px){
+  .head{align-items:center}
+  .title{font-size:1.35rem}
+  .chips{justify-content:flex-start}
+}
+</style>
 </body>
 </html>
