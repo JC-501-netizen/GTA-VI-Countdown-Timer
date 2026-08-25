@@ -7,6 +7,8 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="only light" name="color-scheme"/>
 <title>GTA VI Countdown</title>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0017' stroke='%2300ffff' stroke-width='2'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Segoe UI,Arial,sans-serif' font-size='13' font-weight='800' fill='%23ff4fd8'%3EVI%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0017' stroke='%2300ffff' stroke-width='2'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Segoe UI,Arial,sans-serif' font-size='13' font-weight='800' fill='%23ff4fd8'%3EVI%3C/text%3E%3C/svg%3E" rel="apple-touch-icon"/>
 <meta content="Fan-made GTA VI countdown with a Vice City night scene. Not affiliated with Rockstar Games." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="GTA VI Countdown" property="og:title"/>
@@ -3009,6 +3011,9 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <a href="https://www.youtube.com/@RockstarGames" rel="noopener noreferrer" target="_blank">Rockstar Games YouTube</a>
 </div>
 <div>GTA VI Countdown | By J.C Cobra</div>
+<div class="share-row">
+<button class="btn" id="copySiteLink" type="button">Copy site link</button>
+</div>
 <p class="footer-note">Fan project. Not affiliated with Rockstar Games.</p>
 <p class="footer-note">If lights look too dark, turn off page-darkening extensions such as Dark Reader for this site.</p>
 </footer>
@@ -6570,8 +6575,8 @@ body.hide-reflections .boat-35c16b .water-contact{
 </style>
 <script id="countdown-931-status">
 (()=>{
-  document.body.dataset.countdownBuild='9.3.5';
-  console.info('[9.3.5] public polish: title, disclaimer, previews, phone layout');
+  document.body.dataset.countdownBuild='9.3.6';
+  console.info('[9.3.6] favicon and copy site link');
 })();
 </script>
 
@@ -6627,6 +6632,29 @@ body.hide-reflections .boat-35c16b .water-contact{
   .title{font-size:1.35rem}
   .chips{justify-content:flex-start}
 }
+.share-row{margin:12px 0 4px}
+.share-row .btn{display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:850px){
+  .share-row .btn{width:100%;max-width:22rem}
+}
 </style>
+<script id="countdown-936-share">
+(()=>{
+  const url='https://jc-501-netizen.github.io/GTA-VI-Countdown-Timer/';
+  const button=document.getElementById('copySiteLink');
+  if(!button)return;
+  button.onclick=()=>{
+    const copied=()=>{
+      if(typeof popup==='function')popup('Link copied','Share this URL. It opens the countdown in a browser.');
+      else button.textContent='Copied';
+    };
+    if(navigator.clipboard&&window.isSecureContext){
+      navigator.clipboard.writeText(url).then(copied).catch(()=>window.prompt('Copy this site link:',url));
+    }else{
+      window.prompt('Copy this site link:',url);
+    }
+  };
+})();
+</script>
 </body>
 </html>
