@@ -31,7 +31,7 @@ That opens the countdown in a browser. The page also has a **Copy site link** bu
 
 ## Copyright
 
-All rights reserved. You may view the site. You may not copy or republish this code without permission. See `LICENSE`.
+Copyright 2026 J.C Cobra. Fan project. Not affiliated with Rockstar Games.
 
 ## Credit
 
