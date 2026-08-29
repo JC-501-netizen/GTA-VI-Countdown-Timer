@@ -2598,7 +2598,7 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <div class="head">
 <div>
 <div class="category">
-       Upcoming Event
+       Now Playing
       </div>
 <div class="title">
        Grand Theft Auto VI: An Extended Look
@@ -2621,8 +2621,8 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 </div>
 <div class="card-date" id="netflixLocal">
 </div>
-<a class="watch disabled" href="https://www.netflix.com/GTAVI" id="netflixWatch" target="_blank">
-        Coming Soon
+<a class="watch" href="https://www.netflix.com/GTAVI" id="netflixWatch" rel="noopener noreferrer" target="_blank">
+        Watch on Netflix
        </a>
 </div>
 <div class="card">
@@ -2636,8 +2636,8 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 </div>
 <div class="card-date" id="youtubeLocal">
 </div>
-<a class="watch disabled" href="https://www.youtube.com/@RockstarGames" id="youtubeWatch" target="_blank">
-        Coming Soon
+<a class="watch" href="https://www.youtube.com/watch?v=tJbzMqJGH4k" id="youtubeWatch" rel="noopener noreferrer" target="_blank">
+        Watch on YouTube
        </a>
 <a class="watch" href="https://www.rockstargames.com/VI" rel="noopener noreferrer" target="_blank">
         Official GTA VI Website
@@ -2845,6 +2845,12 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <a class="watch" href="https://www.youtube.com/watch?v=VQRLujxTm3c" rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
 </li>
 <li>
+<strong>An Extended Look</strong>
+<div>Official Grand Theft Auto VI: An Extended Look</div>
+<small>August 27, 2026</small>
+<a class="watch" href="https://www.youtube.com/watch?v=tJbzMqJGH4k" rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+</li>
+<li>
 <strong>Official GTA VI Website</strong>
 <div>Rockstar Games Grand Theft Auto VI hub</div>
 <small>Ongoing official source</small>
@@ -3036,7 +3042,7 @@ function renderLaunchAchievementChips(unlocked){
 }
 function setupExtendedAchievementToggle(){let b=document.querySelector('.extended-achievement-toggle');if(!b)return;b.onclick=()=>{let g=b.closest('.extended-achievement-group'),c=g.classList.toggle('collapsed');b.setAttribute('aria-expanded',String(!c));b.querySelector('i').textContent=c?'+':'−'}}
 function setupLaunchAchievementToggles(){document.querySelectorAll('.milestone-toggle').forEach(button=>{button.onclick=()=>{let group=button.closest('.milestone-group'),collapsed=group.classList.toggle('collapsed');button.setAttribute('aria-expanded',String(!collapsed));button.querySelector('i').textContent=collapsed?'+':'−'}})}
-function update(){let n=new Date(),net=n>=D.netflix,you=n>=D.youtube,ready=n>=D.release;$('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('date').textContent=n.toLocaleDateString([],{weekday:'long',year:'numeric',month:'long',day:'numeric'});$('xlight').classList.toggle('ready',ready);$('xbox').classList.toggle('ready',ready);$('xbox').textContent=ready?'READY':'NOT READY';$('headerStatus').textContent=you?'ROAD TO VICE CITY':net?'EXTENDED LOOK: NETFLIX LIVE':'NEXT EVENT: EXTENDED LOOK';$('netflixTimer').textContent=fmt(D.netflix,'Available on Netflix');$('youtubeTimer').textContent=fmt(D.youtube,'Available on YouTube');$('netflixLocal').textContent='Your local time: '+D.netflix.toLocaleString();$('youtubeLocal').textContent='Your local time: '+D.youtube.toLocaleString();$('netflixWatch').classList.toggle('disabled',!net);$('youtubeWatch').classList.toggle('disabled',!you);let ep=you?100:pct(net?D.netflix:D.start,net?D.youtube:D.netflix);$('eventFill').style.width=ep+'%';$('eventText').textContent=ep.toFixed(1)+'% Complete';$('eventLabel').textContent=you?'Extended Look Available Everywhere':net?'Road to YouTube Release':'Road to the Extended Look';$('preloadTimer').textContent=fmt(D.preload);$('releaseTimer').textContent=fmt(D.release);if($('preloadLocal'))$('preloadLocal').textContent='Your local time: '+D.preload.toLocaleString();if($('releaseLocal'))$('releaseLocal').textContent='Your local time: '+D.release.toLocaleString();$('preloadDays').textContent=days(D.preload);$('releaseDays').textContent=days(D.release);let rp=pct(D.start,D.release);$('releaseFill').style.width=rp+'%';$('releaseText').textContent=rp.toFixed(1)+'% Road to Vice City Complete'}
+function update(){let n=new Date(),net=n>=D.netflix,you=n>=D.youtube,ready=n>=D.release;$('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('date').textContent=n.toLocaleDateString([],{weekday:'long',year:'numeric',month:'long',day:'numeric'});$('xlight').classList.toggle('ready',ready);$('xbox').classList.toggle('ready',ready);$('xbox').textContent=ready?'READY':'NOT READY';$('headerStatus').textContent=you?'ROAD TO VICE CITY':net?'EXTENDED LOOK: NETFLIX LIVE':'NEXT EVENT: EXTENDED LOOK';$('netflixTimer').textContent=fmt(D.netflix,'Available on Netflix');$('youtubeTimer').textContent=fmt(D.youtube,'Available on YouTube');$('netflixLocal').textContent='Your local time: '+D.netflix.toLocaleString();$('youtubeLocal').textContent='Your local time: '+D.youtube.toLocaleString();$('netflixWatch').classList.toggle('disabled',!net);$('youtubeWatch').classList.toggle('disabled',!you);$('netflixWatch').textContent=net?'Watch on Netflix':'Coming Soon';$('youtubeWatch').textContent=you?'Watch on YouTube':'Coming Soon';let ep=you?100:pct(net?D.netflix:D.start,net?D.youtube:D.netflix);$('eventFill').style.width=ep+'%';$('eventText').textContent=ep.toFixed(1)+'% Complete';$('eventLabel').textContent=you?'Extended Look Available Everywhere':net?'Road to YouTube Release':'Road to the Extended Look';$('preloadTimer').textContent=fmt(D.preload);$('releaseTimer').textContent=fmt(D.release);if($('preloadLocal'))$('preloadLocal').textContent='Your local time: '+D.preload.toLocaleString();if($('releaseLocal'))$('releaseLocal').textContent='Your local time: '+D.release.toLocaleString();$('preloadDays').textContent=days(D.preload);$('releaseDays').textContent=days(D.release);let rp=pct(D.start,D.release);$('releaseFill').style.width=rp+'%';$('releaseText').textContent=rp.toFixed(1)+'% Road to Vice City Complete'}
 const classes=['hide-clouds','hide-stars','hide-shooters','hide-aircraft','hide-heli','hide-windows','hide-traffic','hide-reflections','hide-sign','hide-sun','hide-palms','no-motion','low-glow','dark','compact','hud-off'];function applySettings(){let s=load(K.s,{});classes.forEach(c=>document.body.classList.toggle(c,!!s[c]));document.querySelectorAll('[data-setting]').forEach(b=>b.classList.toggle('active',!!s[b.dataset.setting]));[['dim','dim',10],['reflectionLevel','reflect',58]].forEach(([id,k,d])=>{if($(id)){$(id).value=s[k]??d;document.documentElement.style.setProperty('--'+k,(s[k]??d)/100)}});applyIndependentTraffic(s);health()}function applyAirTraffic(level){applyIndependentTraffic(Object.assign(load(K.s,{}),{planeTraffic:level}))}function applyIndependentTraffic(s){s=s||load(K.s,{});const names=['Off','Low','Normal','High'];const plane=Number(s.planeTraffic??s.airTraffic??2);const heli=Number(s.heliTraffic??2);const car=Number(s.carTraffic??2);const boat=Number(s.boatTraffic??2);document.body.classList.remove('air-off','air-low','air-normal','air-busy','plane-off','plane-low','plane-normal','plane-high','heli-off','heli-low','heli-normal','heli-high','car-off','car-low','car-normal','car-high','boat-off','boat-low','boat-normal','boat-high');document.body.classList.add(['air-off','air-low','air-normal','air-busy'][plane]||'air-normal');document.body.classList.add(['plane-off','plane-low','plane-normal','plane-high'][plane]||'plane-normal');document.body.classList.add(['heli-off','heli-low','heli-normal','heli-high'][heli]||'heli-normal');document.body.classList.add(['car-off','car-low','car-normal','car-high'][car]||'car-normal');document.body.classList.add(['boat-off','boat-low','boat-normal','boat-high'][boat]||'boat-normal');document.documentElement.style.setProperty('--traffic',[0,.45,.8,1][car]??.8);[['planeTrafficLevel','planeTrafficLabel',plane],['heliTrafficLevel','heliTrafficLabel',heli],['carTrafficLevel','carTrafficLabel',car],['boatTrafficLevel','boatTrafficLabel',boat]].forEach(([id,lid,v])=>{if($(id))$(id).value=v;if($(lid))$(lid).textContent=names[v]||'Normal'});const cars=[...document.querySelectorAll('.vehicle')];if(cars.length){const keep=car===0?0:car===1?Math.max(2,Math.ceil(cars.length*.35)):cars.length;cars.forEach((el,i)=>{el.style.display=i<keep?'':'none'})}}function toggle(c){let s=load(K.s,{});s[c]=!s[c];save(K.s,s);applySettings()}function preset(p){let s=load(K.s,{});let off=p==='calm'?['hide-shooters']:[];classes.filter(c=>c.startsWith('hide-')).forEach(c=>s[c]=off.includes(c));s.reflect=p==='calm'?35:p==='active'?60:85;s.planeTraffic=p==='calm'?1:2;s.heliTraffic=p==='calm'?0:p==='cinematic'?3:2;s.carTraffic=p==='calm'?1:p==='cinematic'?3:2;s.boatTraffic=p==='calm'?1:2;save(K.s,s);applySettings();popup('Environment Preset',p+' mode activated')}function health(){let ok='Available';try{localStorage.setItem('x','1');localStorage.removeItem('x')}catch{ok='Unavailable'}$('storageHealth').textContent=ok;$('settingsHealth').textContent=localStorage.getItem(K.s)?'Active':'Default'}
 document.querySelectorAll('[data-setting]').forEach(b=>b.onclick=()=>toggle(b.dataset.setting));document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>preset(b.dataset.preset));[['dim','dim'],['reflectionLevel','reflect']].forEach(([id,k])=>{if($(id))$(id).oninput=e=>{let s=load(K.s,{});s[k]=+e.target.value;save(K.s,s);applySettings()}});[['planeTrafficLevel','planeTraffic'],['heliTrafficLevel','heliTraffic'],['carTrafficLevel','carTraffic'],['boatTrafficLevel','boatTraffic']].forEach(([id,k])=>{if($(id))$(id).oninput=e=>{let s=load(K.s,{});s[k]=+e.target.value;save(K.s,s);applySettings()}});$('journey').onclick=()=>{unlock('journey','Road to Vice City — the countdown journey has begun.');renderAchievements()};$('fullscreen').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();$('clearLog').onclick=()=>{if(confirm('Clear achievement history?')){localStorage.removeItem(K.l);renderLog()}};$('resetMilestones').onclick=()=>{if(confirm('Reset milestones?')){localStorage.removeItem(K.u);renderAchievements()}};$('resetSettings').onclick=()=>{if(confirm('Reset settings?')){localStorage.removeItem(K.s);localStorage.removeItem(K.c);location.reload()}};function sec(){return load(K.c,{})}document.querySelectorAll('[data-collapse]').forEach(b=>b.onclick=()=>{let id=b.dataset.collapse,s=sec(),q=document.querySelector(`[data-section="${id}"]`);s[id]=!s[id];save(K.c,s);q.classList.toggle('collapsed',s[id]);b.textContent=s[id]?'+':'−'});function applySec(){let s=sec();Object.entries(s).forEach(([id,v])=>{let q=document.querySelector(`[data-section="${id}"]`),b=document.querySelector(`[data-collapse="${id}"]`);if(q)q.classList.toggle('collapsed',v);if(b)b.textContent=v?'+':'−'})}
 function safeRun(n,f){try{f()}catch(e){console.error('[8.2] '+n,e)}}function boot67(){safeRun('timers',update);window.gtaTimerInterval=setInterval(()=>safeRun('timer update',update),1000);safeRun('log',renderLog);safeRun('achievements',renderAchievements);safeRun('milestones',unlockDue);window.gtaAchievementInterval=setInterval(()=>safeRun('milestones',unlockDue),30000);safeRun('settings',applySettings);safeRun('sections',applySec);safeRun('extended achievement toggle',setupExtendedAchievementToggle);safeRun('launch achievement toggles',setupLaunchAchievementToggles);safeRun('environment',build);safeRun('timer refresh',update)}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot67,{once:true})}else{boot67()}
@@ -6575,8 +6581,8 @@ body.hide-reflections .boat-35c16b .water-contact{
 </style>
 <script id="countdown-931-status">
 (()=>{
-  document.body.dataset.countdownBuild='9.3.6';
-  console.info('[9.3.6] favicon and copy site link');
+  document.body.dataset.countdownBuild='9.3.7';
+  console.info('[9.3.7] extended look now playing');
 })();
 </script>
 
