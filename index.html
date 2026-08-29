@@ -2568,6 +2568,8 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 </div>
 <div class="muted" id="date">
 </div>
+<div class="muted" id="headerLaunch">
+</div>
 </div>
 <div class="cell brand-cell">
 <div class="brand">
@@ -2579,7 +2581,6 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <div class="subtitle">
       COUNTDOWN TO CHAOS
      </div>
-<div class="muted">GTA VI Countdown 9.0</div>
 <div class="status" id="headerStatus">
 </div>
 </div>
@@ -2615,7 +2616,7 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
         GTA VI Preload
        </div>
 <div class="card-date">
-        November 12, 2026 — 12:00 AM ET
+        November 12, 2026 — 12:00 AM local
        </div>
 <div class="timer" id="preloadTimer">
 </div>
@@ -2626,13 +2627,14 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 <div>
         Days Until Preload
        </div>
+<a class="watch" href="https://www.rockstargames.com/VI" rel="noopener noreferrer" target="_blank">Pre-Order</a>
 </div>
 <div class="card">
 <div class="card-title">
         GTA VI Release
        </div>
 <div class="card-date">
-        November 19, 2026 — 12:00 AM ET
+        November 19, 2026 — 12:00 AM local
        </div>
 <div class="timer" id="releaseTimer">
 </div>
@@ -2705,9 +2707,12 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
        Grand Theft Auto VI: An Extended Look
       </div>
 </div>
+<div class="head-actions">
+<a class="watch head-watch" href="https://www.youtube.com/watch?v=tJbzMqJGH4k" rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
 <button class="collapse" data-collapse="event">
       +
      </button>
+</div>
 </div>
 <div class="body">
 <div class="grid2">
@@ -3054,7 +3059,7 @@ body{width:100%;min-height:100vh;height:auto!important;margin:0!important;paddin
 </footer>
 </main>
 <script>
-   const D={netflix:new Date('2026-08-27T15:00:00-04:00'),youtube:new Date('2026-08-27T21:00:00-04:00'),preload:new Date('2026-11-12T00:00:00-05:00'),release:new Date('2026-11-19T00:00:00-05:00'),start:new Date('2026-06-25T00:00:00-04:00')},$=id=>document.getElementById(id),K={s:'gta6-v87-settings',c:'gta6-v87-sections',u:'gta6-v87-unlocked',l:'gta6-v87-log',g:'gta6-v87-groups'};
+   const D={netflix:new Date('2026-08-27T15:00:00-04:00'),youtube:new Date('2026-08-27T21:00:00-04:00'),preload:new Date(2026,10,12),release:new Date(2026,10,19),start:new Date('2026-06-25T00:00:00-04:00')},$=id=>document.getElementById(id),K={s:'gta6-v87-settings',c:'gta6-v87-sections',u:'gta6-v87-unlocked',l:'gta6-v87-log',g:'gta6-v87-groups'};
 const A=[{id:'journey',name:'Road to Vice City — the countdown journey has begun.',group:'intro'},...[[14,'14 Days Until the Extended Look'],[7,'7 Days Until the Extended Look'],[3,'3 Days Until the Extended Look'],[1,'24 Hours Until the Extended Look']].map(([d,n])=>({id:'e'+d,name:n,group:'extended',date:new Date(D.netflix-d*86400000)})),{id:'enet',name:'Netflix Premiere Available',group:'extended',date:D.netflix},{id:'eyt',name:'YouTube Version Available',group:'extended',date:D.youtube},...[[100,'100 Days Until Preload'],[75,'75 Days Until Preload'],[50,'50 Days Until Preload'],[30,'30 Days Until Preload'],[14,'14 Days Until Preload'],[7,'7 Days Until Preload'],[3,'3 Days Until Preload'],[1,'1 Day Until Preload'],[0,'GTA VI Preload Available']].map(([d,n])=>({id:'p'+d,name:n,group:'game',date:new Date(D.preload-d*86400000)})),...[[100,'100 Days Until Launch'],[75,'75 Days Until Launch'],[50,'50 Days Until Launch'],[30,'30 Days Until Launch'],[14,'14 Days Until Launch'],[7,'7 Days Until Launch'],[3,'3 Days Until Launch'],[1,'1 Day Until Launch'],[0,'GTA VI Launch Day']].map(([d,n])=>({id:'r'+d,name:n,group:'game',date:new Date(D.release-d*86400000)}))];
 function load(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}}function save(k,v){localStorage.setItem(k,JSON.stringify(v))}function fmt(t,done='Available Now!'){let x=t-Date.now();if(x<=0)return done;return `${Math.floor(x/86400000)}d ${Math.floor(x/3600000%24)}h ${Math.floor(x/60000%60)}m ${Math.floor(x/1000%60)}s`}function days(t){return Math.max(0,Math.ceil((t-Date.now())/86400000))}function pct(a,b){return Math.min(100,Math.max(0,(Date.now()-a)/(b-a)*100))}
 function build(){for(let i=0;i<75;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.setProperty('--s',(2+Math.random()*5)+'s');s.style.setProperty('--d',(-Math.random()*7)+'s');$('stars').append(s)}let hs=[58,82,48,95,68,76,52,89,62,73,46,91],roofs=['polygon(0 0,100% 0,100% 100%,0 100%)','polygon(0 8%,25% 8%,25% 0,75% 0,75% 8%,100% 8%,100% 100%,0 100%)','polygon(0 10%,20% 10%,20% 0,80% 0,80% 10%,100% 10%,100% 100%,0 100%)'];hs.forEach((h,i)=>{let b=document.createElement('div');b.className='building';b.style.setProperty('--h',h+'%');b.style.setProperty('--w',(5+Math.random()*4)+'%');b.style.setProperty('--roof',roofs[i%3]);let grid=document.createElement('div');grid.className='window-grid';let cols=3+Math.floor(Math.random()*3);grid.style.setProperty('--cols',cols);for(let j=0;j<cols*13;j++){let w=document.createElement('i');w.className='window';if(Math.random()<.26){w.classList.add('on');w.style.setProperty('--wc',['#ffd66f','#72eaff','#ff63c7'][Math.floor(Math.random()*3)]);w.style.setProperty('--ws',(12+Math.random()*28)+'s');w.style.setProperty('--wd',(-Math.random()*20)+'s')}grid.append(w)}b.append(grid);if(h>86)b.insertAdjacentHTML('beforeend','<i class="antenna"></i><i class="roof-beacon" style="--bs:'+(1.5+Math.random()*1.7)+'s"></i>');$('city').append(b)});for(let lane=0;lane<2;lane++){let count=5,speed=lane===0?24:27;for(let i=0;i<count;i++){let v=document.createElement('i');v.className='vehicle '+(lane===0?'forward':'away');let colors=['#7a435a','#345b72','#4f7048','#8a6740','#62507f','#77777c','#7d4838','#3d6670','#745b70','#4d5267'];v.style.setProperty('--car',colors[Math.floor(Math.random()*colors.length)]);v.style.setProperty('--speed',speed+'s');v.style.setProperty('--delay',(-(speed/count)*i)+'s');v.innerHTML='<i class="car-body"></i><i class="car-window"></i><i class="head-light"></i><i class="tail-light"></i><i class="road-reflect"></i>';$('road').append(v)}}[{x:18,w:10,h:42,c:'rgba(255,211,111,.22)'},{x:31,w:8,h:34,c:'rgba(95,232,255,.20)'},{x:47,w:24,h:58,c:'rgba(255,145,92,.25)'},{x:64,w:9,h:36,c:'rgba(255,90,190,.20)'},{x:78,w:11,h:40,c:'rgba(80,235,255,.20)'},{x:87,w:14,h:48,c:'rgba(255,20,147,.25)'}].forEach((o,i)=>{let r=document.createElement('i');r.className='reflection source-reflection';r.style.setProperty('--x',o.x+'%');r.style.setProperty('--w',o.w+'px');r.style.setProperty('--h',o.h+'%');r.style.setProperty('--sk',(i%2?-4:4)+'deg');r.style.setProperty('--rs',(5+i%3)+'s');r.style.setProperty('--c',o.c);$('water').append(r)});[0,45,90,135,180,225,270,315].forEach(a=>{['leftFronds','rightFronds'].forEach(id=>{let f=document.createElement('i');f.className='frond';f.style.setProperty('--r',a+'deg');$(id).append(f)})});}
@@ -3071,7 +3076,7 @@ function renderLaunchAchievementChips(unlocked){
 }
 function setupGroupToggles(){document.querySelectorAll('.milestone-toggle,.extended-achievement-toggle').forEach(button=>{button.onclick=()=>{let group=button.closest('[data-group]');if(!group)return;let collapsed=group.classList.toggle('collapsed');let stored=load(K.g,{});stored[group.dataset.group]=collapsed;save(K.g,stored);button.setAttribute('aria-expanded',String(!collapsed));let icon=button.querySelector('i');if(icon)icon.textContent=collapsed?'+':'−'}})}
 function applyGroups(){let stored=load(K.g,{});document.querySelectorAll('[data-group]').forEach(group=>{let collapsed=!!stored[group.dataset.group];group.classList.toggle('collapsed',collapsed);let button=group.querySelector('.milestone-toggle,.extended-achievement-toggle');if(!button)return;button.setAttribute('aria-expanded',String(!collapsed));let icon=button.querySelector('i');if(icon)icon.textContent=collapsed?'+':'−'})}
-function update(){let n=new Date(),net=n>=D.netflix,you=n>=D.youtube,ready=n>=D.release;$('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('date').textContent=n.toLocaleDateString([],{weekday:'long',year:'numeric',month:'long',day:'numeric'});$('xlight').classList.toggle('ready',ready);$('xbox').classList.toggle('ready',ready);$('xbox').textContent=ready?'READY':'NOT READY';$('headerStatus').textContent=you?'ROAD TO VICE CITY':net?'EXTENDED LOOK: NETFLIX LIVE':'NEXT EVENT: EXTENDED LOOK';$('netflixTimer').textContent=fmt(D.netflix,'Available on Netflix');$('youtubeTimer').textContent=fmt(D.youtube,'Available on YouTube');$('netflixLocal').textContent='Your local time: '+D.netflix.toLocaleString();$('youtubeLocal').textContent='Your local time: '+D.youtube.toLocaleString();$('netflixWatch').classList.toggle('disabled',!net);$('youtubeWatch').classList.toggle('disabled',!you);$('netflixWatch').textContent=net?'Watch on Netflix':'Coming Soon';$('youtubeWatch').textContent=you?'Watch on YouTube':'Coming Soon';let ep=you?100:pct(net?D.netflix:D.start,net?D.youtube:D.netflix);$('eventFill').style.width=ep+'%';$('eventText').textContent=ep.toFixed(1)+'% Complete';$('eventLabel').textContent=you?'Extended Look Available Everywhere':net?'Road to YouTube Release':'Road to the Extended Look';$('preloadTimer').textContent=fmt(D.preload);$('releaseTimer').textContent=fmt(D.release);if($('preloadLocal'))$('preloadLocal').textContent='Your local time: '+D.preload.toLocaleString();if($('releaseLocal'))$('releaseLocal').textContent='Your local time: '+D.release.toLocaleString();$('preloadDays').textContent=days(D.preload);$('releaseDays').textContent=days(D.release);let rp=pct(D.start,D.release);$('releaseFill').style.width=rp+'%';$('releaseText').textContent=rp.toFixed(1)+'% Road to Vice City Complete'}
+function update(){let n=new Date(),net=n>=D.netflix,you=n>=D.youtube,ready=n>=D.release;$('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('date').textContent=n.toLocaleDateString([],{weekday:'long',year:'numeric',month:'long',day:'numeric'});if($('headerLaunch')){let left=days(D.release);$('headerLaunch').textContent=ready?'Launch day':left+(left===1?' day':' days')+' until November 19'}$('xlight').classList.toggle('ready',ready);$('xbox').classList.toggle('ready',ready);$('xbox').textContent=ready?'READY':'NOT READY';$('headerStatus').textContent=you?'ROAD TO VICE CITY':net?'EXTENDED LOOK: NETFLIX LIVE':'NEXT EVENT: EXTENDED LOOK';$('netflixTimer').textContent=fmt(D.netflix,'Available on Netflix');$('youtubeTimer').textContent=fmt(D.youtube,'Available on YouTube');$('netflixLocal').textContent='Your local time: '+D.netflix.toLocaleString();$('youtubeLocal').textContent='Your local time: '+D.youtube.toLocaleString();$('netflixWatch').classList.toggle('disabled',!net);$('youtubeWatch').classList.toggle('disabled',!you);$('netflixWatch').textContent=net?'Watch on Netflix':'Coming Soon';$('youtubeWatch').textContent=you?'Watch on YouTube':'Coming Soon';let ep=you?100:pct(net?D.netflix:D.start,net?D.youtube:D.netflix);$('eventFill').style.width=ep+'%';$('eventText').textContent=ep.toFixed(1)+'% Complete';$('eventLabel').textContent=you?'Extended Look Available Everywhere':net?'Road to YouTube Release':'Road to the Extended Look';$('preloadTimer').textContent=fmt(D.preload);$('releaseTimer').textContent=fmt(D.release);if($('preloadLocal'))$('preloadLocal').textContent='Your local time: '+D.preload.toLocaleString();if($('releaseLocal'))$('releaseLocal').textContent='Your local time: '+D.release.toLocaleString();$('preloadDays').textContent=days(D.preload);$('releaseDays').textContent=days(D.release);let rp=pct(D.start,D.release);$('releaseFill').style.width=rp+'%';$('releaseText').textContent=rp.toFixed(1)+'% Road to Vice City Complete'}
 const classes=['hide-clouds','hide-stars','hide-shooters','hide-aircraft','hide-heli','hide-windows','hide-traffic','hide-reflections','hide-sign','hide-sun','hide-palms','no-motion','low-glow','dark','compact','hud-off'];function applySettings(){let s=load(K.s,{});classes.forEach(c=>document.body.classList.toggle(c,!!s[c]));document.querySelectorAll('[data-setting]').forEach(b=>b.classList.toggle('active',!!s[b.dataset.setting]));[['dim','dim',10],['reflectionLevel','reflect',58]].forEach(([id,k,d])=>{if($(id)){$(id).value=s[k]??d;document.documentElement.style.setProperty('--'+k,(s[k]??d)/100)}});applyIndependentTraffic(s);health()}function applyAirTraffic(level){applyIndependentTraffic(Object.assign(load(K.s,{}),{planeTraffic:level}))}function applyIndependentTraffic(s){s=s||load(K.s,{});const names=['Off','Low','Normal','High'];const plane=Number(s.planeTraffic??s.airTraffic??2);const heli=Number(s.heliTraffic??2);const car=Number(s.carTraffic??2);const boat=Number(s.boatTraffic??2);document.body.classList.remove('air-off','air-low','air-normal','air-busy','plane-off','plane-low','plane-normal','plane-high','heli-off','heli-low','heli-normal','heli-high','car-off','car-low','car-normal','car-high','boat-off','boat-low','boat-normal','boat-high');document.body.classList.add(['air-off','air-low','air-normal','air-busy'][plane]||'air-normal');document.body.classList.add(['plane-off','plane-low','plane-normal','plane-high'][plane]||'plane-normal');document.body.classList.add(['heli-off','heli-low','heli-normal','heli-high'][heli]||'heli-normal');document.body.classList.add(['car-off','car-low','car-normal','car-high'][car]||'car-normal');document.body.classList.add(['boat-off','boat-low','boat-normal','boat-high'][boat]||'boat-normal');document.documentElement.style.setProperty('--traffic',[0,.45,.8,1][car]??.8);[['planeTrafficLevel','planeTrafficLabel',plane],['heliTrafficLevel','heliTrafficLabel',heli],['carTrafficLevel','carTrafficLabel',car],['boatTrafficLevel','boatTrafficLabel',boat]].forEach(([id,lid,v])=>{if($(id))$(id).value=v;if($(lid))$(lid).textContent=names[v]||'Normal'});const cars=[...document.querySelectorAll('.vehicle')];if(cars.length){const keep=car===0?0:car===1?Math.max(2,Math.ceil(cars.length*.35)):cars.length;cars.forEach((el,i)=>{el.style.display=i<keep?'':'none'})}}function toggle(c){let s=load(K.s,{});s[c]=!s[c];save(K.s,s);applySettings()}function preset(p){let s=load(K.s,{});let off=p==='calm'?['hide-shooters']:[];classes.filter(c=>c.startsWith('hide-')).forEach(c=>s[c]=off.includes(c));s.reflect=p==='calm'?35:p==='active'?60:85;s.planeTraffic=p==='calm'?1:2;s.heliTraffic=p==='calm'?0:p==='cinematic'?3:2;s.carTraffic=p==='calm'?1:p==='cinematic'?3:2;s.boatTraffic=p==='calm'?1:2;save(K.s,s);applySettings();popup('Environment Preset',p+' mode activated')}function health(){let ok='Available';try{localStorage.setItem('x','1');localStorage.removeItem('x')}catch{ok='Unavailable'}$('storageHealth').textContent=ok;$('settingsHealth').textContent=localStorage.getItem(K.s)?'Active':'Default'}
 document.querySelectorAll('[data-setting]').forEach(b=>b.onclick=()=>toggle(b.dataset.setting));document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>preset(b.dataset.preset));[['dim','dim'],['reflectionLevel','reflect']].forEach(([id,k])=>{if($(id))$(id).oninput=e=>{let s=load(K.s,{});s[k]=+e.target.value;save(K.s,s);applySettings()}});[['planeTrafficLevel','planeTraffic'],['heliTrafficLevel','heliTraffic'],['carTrafficLevel','carTraffic'],['boatTrafficLevel','boatTraffic']].forEach(([id,k])=>{if($(id))$(id).oninput=e=>{let s=load(K.s,{});s[k]=+e.target.value;save(K.s,s);applySettings()}});$('journey').onclick=()=>{unlock('journey','Road to Vice City — the countdown journey has begun.');renderAchievements()};$('fullscreen').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();$('clearLog').onclick=()=>{if(confirm('Clear achievement history?')){localStorage.removeItem(K.l);renderLog()}};$('resetMilestones').onclick=()=>{if(confirm('Reset milestones?')){localStorage.removeItem(K.u);renderAchievements()}};$('resetSettings').onclick=()=>{if(confirm('Reset settings?')){localStorage.removeItem(K.s);localStorage.removeItem(K.c);localStorage.removeItem(K.g);location.reload()}};function sec(){return load(K.c,{})}document.querySelectorAll('[data-collapse]').forEach(b=>b.onclick=()=>{let id=b.dataset.collapse,s=sec(),q=document.querySelector(`[data-section="${id}"]`);s[id]=!s[id];save(K.c,s);q.classList.toggle('collapsed',s[id]);b.textContent=s[id]?'+':'−'});function applySec(){let s=sec();if(!('event' in s)){s.event=true;save(K.c,s)}Object.entries(s).forEach(([id,v])=>{let q=document.querySelector(`[data-section="${id}"]`),b=document.querySelector(`[data-collapse="${id}"]`);if(q)q.classList.toggle('collapsed',v);if(b)b.textContent=v?'+':'−'})}
 function exportBackup(){let data={s:load(K.s,{}),c:load(K.c,{}),u:load(K.u,[]),l:load(K.l,[]),g:load(K.g,{})};let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gta6-countdown-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);popup('Backup downloaded','Your settings and achievements were saved to a JSON file')}
@@ -6449,6 +6454,10 @@ body.compact .milestone-archive{display:block}
 .milestone-group.collapsed .history-body{display:none}
 .platform-label{font-size:.68rem;letter-spacing:.12em;line-height:1.45;max-width:12rem}
 label.btn{display:inline-grid;place-items:center;cursor:pointer;margin:0}
+.head-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.event .head-watch{display:none;margin-top:0;padding:7px 12px;font-size:.78rem;font-weight:900;white-space:nowrap}
+.event.collapsed .head-watch{display:inline-block}
+#headerLaunch{margin-top:6px;color:var(--gold)}
 </style>
 <script id="countdown-91-dashboard-status">
 (()=>{
@@ -6617,8 +6626,8 @@ body.hide-reflections .boat-35c16b .water-contact{
 </style>
 <script id="countdown-931-status">
 (()=>{
-  document.body.dataset.countdownBuild='9.3.9';
-  console.info('[9.3.9] launch focus, timezone dates, backup, console platforms');
+  document.body.dataset.countdownBuild='9.3.10';
+  console.info('[9.3.10] header launch days, collapsed watch, local midnight');
 })();
 </script>
 
